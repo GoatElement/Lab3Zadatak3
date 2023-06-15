@@ -1,6 +1,8 @@
 package farma;
 
 import java.awt.BorderLayout;
+import java.awt.Button;
+import java.awt.Color;
 import java.awt.FlowLayout;
 import java.awt.Frame;
 import java.awt.GridLayout;
@@ -13,24 +15,22 @@ import java.awt.event.WindowEvent;
 
 public class SimulacijaFarme extends Frame {
 	
-	private Label labelaNovac = new Label("Novac: ");
+	private Label labelaNovac = new Label("Novac: 2000");
+	private Button dugmeKokoska = new Button("Kokoska (300)");
 	
 	
-	
-	public Label getLabelaNovac() {
-		return labelaNovac;
-	}
-
-	public void setLabelaNovac(String s) {
-		this.labelaNovac = new Label(s);
-	}
 
 	private void populate() {
 		
 		Panel contentMain = new Panel(new BorderLayout());	
 		Panel contentDesno = new Panel(new GridLayout(0,1));//dodati na east
+		Panel contentCentar= new Njiva(5,5);
 		
-		contentDesno.add(getLabelaNovac());
+		
+		contentDesno.add(labelaNovac);
+		contentDesno.add(dugmeKokoska);
+		contentMain.add(contentDesno,BorderLayout.EAST);
+		contentMain.add(contentCentar,BorderLayout.CENTER);
 		
 	}
 	
