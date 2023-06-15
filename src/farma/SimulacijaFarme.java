@@ -1,6 +1,11 @@
 package farma;
 
+import java.awt.BorderLayout;
+import java.awt.FlowLayout;
 import java.awt.Frame;
+import java.awt.GridLayout;
+import java.awt.Label;
+import java.awt.Panel;
 import java.awt.event.ComponentAdapter;
 import java.awt.event.ComponentEvent;
 import java.awt.event.WindowAdapter;
@@ -8,8 +13,24 @@ import java.awt.event.WindowEvent;
 
 public class SimulacijaFarme extends Frame {
 	
+	private Label labelaNovac = new Label("Novac: ");
+	
+	
+	
+	public Label getLabelaNovac() {
+		return labelaNovac;
+	}
+
+	public void setLabelaNovac(String s) {
+		this.labelaNovac = new Label(s);
+	}
+
 	private void populate() {
-		// TODO Auto-generated method stub
+		
+		Panel contentMain = new Panel(new BorderLayout());	
+		Panel contentDesno = new Panel(new GridLayout(0,1));//dodati na east
+		
+		contentDesno.add(getLabelaNovac());
 		
 	}
 	
